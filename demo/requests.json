@@ -1,0 +1,38 @@
+[
+  {
+    "id": "lawn_red_bench",
+    "request": {
+      "location_id": "qingrenpo_lawn",
+      "query": "国科大情人坡草坪上红椅旁的校园人像",
+      "limit": 3
+    },
+    "expected_ids": ["REF_019", "REF_053", "REF_057"],
+    "expected_counts": {"matched": 41, "pending": 7, "excluded": 50},
+    "expected_reason": null
+  },
+  {
+    "id": "bridge_two_people",
+    "request": {
+      "location_id": "ucas_bridge",
+      "person_count": 2,
+      "query": "双人在桥上互动，牵手或转圈，构图里保留栏杆",
+      "aesthetic_weight": 0.1
+    },
+    "expected_ids": ["REF_041", "REF_031", "REF_040"],
+    "expected_counts": {"matched": 4, "pending": 7, "excluded": 87},
+    "expected_reason": null
+  },
+  {
+    "id": "cafeteria_no_match",
+    "request": {
+      "location_id": "cafeterias_3_4",
+      "person_count": 1,
+      "framing": "full_body",
+      "pose": "sitting",
+      "required_objects": ["red_bench"]
+    },
+    "expected_ids": [],
+    "expected_counts": {"matched": 0, "pending": 8, "excluded": 90},
+    "expected_reason": "no_confirmed_matches"
+  }
+]

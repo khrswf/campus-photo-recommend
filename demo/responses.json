@@ -1,0 +1,319 @@
+[
+  {
+    "id": "lawn_red_bench",
+    "request": {
+      "location_id": "qingrenpo_lawn",
+      "query": "国科大情人坡草坪上红椅旁的校园人像",
+      "limit": 3
+    },
+    "response": {
+      "recommendations": [
+        {
+          "photo_id": "REF_019",
+          "resource_id": "REF_019",
+          "image_path": "images/REF_019.webp",
+          "cosine_similarity": 0.1643015742301941,
+          "aesthetic_score": 5.081569671630859,
+          "score": 0.8907015482584636,
+          "location_id": "qingrenpo_lawn",
+          "viewpoint_group": "红椅_朝圆塔",
+          "viewpoint_status": "unknown"
+        },
+        {
+          "photo_id": "REF_053",
+          "resource_id": "REF_053",
+          "image_path": "images/REF_053.webp",
+          "cosine_similarity": 0.15820039808750153,
+          "aesthetic_score": 4.442803382873535,
+          "score": 0.8348839354678074,
+          "location_id": "qingrenpo_lawn",
+          "viewpoint_group": "红椅_朝钟楼",
+          "viewpoint_status": "unknown"
+        },
+        {
+          "photo_id": "REF_057",
+          "resource_id": "REF_057",
+          "image_path": "images/REF_057.webp",
+          "cosine_similarity": 0.14889824390411377,
+          "aesthetic_score": 4.732413291931152,
+          "score": 0.7778595269291346,
+          "location_id": "qingrenpo_lawn",
+          "viewpoint_group": "红椅_朝松树",
+          "viewpoint_status": "unknown"
+        }
+      ],
+      "filter_counts": {
+        "matched": 41,
+        "pending": 7,
+        "excluded": 50
+      },
+      "pending": [
+        {
+          "photo_id": "REF_005",
+          "reasons": [
+            "location_id_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_006",
+          "reasons": [
+            "location_id_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_030",
+          "reasons": [
+            "location_id_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_033",
+          "reasons": [
+            "location_id_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_034",
+          "reasons": [
+            "location_id_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_059",
+          "reasons": [
+            "location_id_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_065",
+          "reasons": [
+            "location_id_unknown"
+          ]
+        }
+      ],
+      "excluded_reason_counts": {
+        "location_id_mismatch": 50
+      },
+      "missing_features": [],
+      "reason": null
+    }
+  },
+  {
+    "id": "bridge_two_people",
+    "request": {
+      "location_id": "ucas_bridge",
+      "person_count": 2,
+      "query": "双人在桥上互动，牵手或转圈，构图里保留栏杆",
+      "aesthetic_weight": 0.1
+    },
+    "response": {
+      "recommendations": [
+        {
+          "photo_id": "REF_041",
+          "resource_id": "REF_041",
+          "image_path": "images/REF_041.webp",
+          "cosine_similarity": 0.128829687833786,
+          "aesthetic_score": 4.207155227661133,
+          "score": 0.9356350580851237,
+          "location_id": "ucas_bridge",
+          "viewpoint_group": "桥外侧_钢拱与栏杆",
+          "viewpoint_status": "unknown"
+        },
+        {
+          "photo_id": "REF_031",
+          "resource_id": "REF_031",
+          "image_path": "images/REF_031.webp",
+          "cosine_similarity": 0.10367860645055771,
+          "aesthetic_score": 4.154114723205566,
+          "score": 0.44040656010279733,
+          "location_id": "ucas_bridge",
+          "viewpoint_group": "桥上栏杆_朝钟楼",
+          "viewpoint_status": "unknown"
+        },
+        {
+          "photo_id": "REF_040",
+          "resource_id": "REF_040",
+          "image_path": "images/REF_040.webp",
+          "cosine_similarity": 0.08877049386501312,
+          "aesthetic_score": 5.440953254699707,
+          "score": 0.16151115894678883,
+          "location_id": "ucas_bridge",
+          "viewpoint_group": "桥上栏杆_朝山与道路",
+          "viewpoint_status": "unknown"
+        }
+      ],
+      "filter_counts": {
+        "matched": 4,
+        "pending": 7,
+        "excluded": 87
+      },
+      "pending": [
+        {
+          "photo_id": "REF_005",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_006",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_030",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_033",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_034",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_059",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_065",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown"
+          ]
+        }
+      ],
+      "excluded_reason_counts": {
+        "location_id_mismatch": 79,
+        "person_count_mismatch": 32
+      },
+      "missing_features": [],
+      "reason": null
+    }
+  },
+  {
+    "id": "cafeteria_no_match",
+    "request": {
+      "location_id": "cafeterias_3_4",
+      "person_count": 1,
+      "framing": "full_body",
+      "pose": "sitting",
+      "required_objects": [
+        "red_bench"
+      ]
+    },
+    "response": {
+      "recommendations": [],
+      "filter_counts": {
+        "matched": 0,
+        "pending": 8,
+        "excluded": 90
+      },
+      "pending": [
+        {
+          "photo_id": "REF_005",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_006",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_030",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_033",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_034",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_059",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_065",
+          "reasons": [
+            "location_id_unknown",
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        },
+        {
+          "photo_id": "REF_076",
+          "reasons": [
+            "person_count_unknown",
+            "framing_unknown",
+            "pose_unknown",
+            "background_objects_unknown"
+          ]
+        }
+      ],
+      "excluded_reason_counts": {
+        "location_id_mismatch": 90,
+        "required_objects_missing": 16,
+        "pose_mismatch": 11,
+        "framing_mismatch": 3,
+        "person_count_mismatch": 6
+      },
+      "missing_features": [],
+      "reason": "no_confirmed_matches"
+    }
+  }
+]

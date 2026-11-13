@@ -1,0 +1,654 @@
+{
+  "dataset_id": "formal",
+  "version": "1",
+  "validation": [
+    {
+      "id": "V1",
+      "query": "草坪红色长椅上一个人坐着，远处能看见圆塔",
+      "conditions": {
+        "location_id": "qingrenpo_lawn",
+        "person_count": 1,
+        "pose": "sitting",
+        "required_objects": [
+          "red_bench"
+        ]
+      },
+      "counts": {
+        "matched": 10,
+        "pending": 38,
+        "excluded": 50
+      }
+    },
+    {
+      "id": "V2",
+      "query": "红砖拱廊里单人全身照，台阶与重复拱门形成纵深",
+      "conditions": {
+        "location_id": "science_arts_building",
+        "person_count": 1,
+        "framing": "full_body"
+      },
+      "counts": {
+        "matched": 11,
+        "pending": 12,
+        "excluded": 75
+      }
+    },
+    {
+      "id": "V3",
+      "query": "桥上栏杆旁的人像，背景能看见远山和道路",
+      "conditions": {
+        "location_id": "ucas_bridge"
+      },
+      "counts": {
+        "matched": 12,
+        "pending": 7,
+        "excluded": 79
+      }
+    },
+    {
+      "id": "V4",
+      "query": "从下方仰拍弧形栏杆平台和钟楼，人物在画面里占比较小",
+      "conditions": {
+        "location_id": "clock_tower"
+      },
+      "counts": {
+        "matched": 6,
+        "pending": 7,
+        "excluded": 85
+      }
+    }
+  ],
+  "validation_scores": [
+    {
+      "weight": 0.0,
+      "mean_ndcg_at_3": 0.625
+    },
+    {
+      "weight": 0.1,
+      "mean_ndcg_at_3": 0.625
+    },
+    {
+      "weight": 0.2,
+      "mean_ndcg_at_3": 0.625
+    },
+    {
+      "weight": 0.35,
+      "mean_ndcg_at_3": 0.625
+    },
+    {
+      "weight": 0.5,
+      "mean_ndcg_at_3": 0.625
+    }
+  ],
+  "chosen_aesthetic_weight": 0.1,
+  "test_mean_ndcg_at_3": {
+    "A": 0.6558232568774955,
+    "B": 0.6949298173793919
+  },
+  "test": [
+    {
+      "id": "T1",
+      "query": "草地上的夏日人像，戴草帽，手边有西瓜",
+      "conditions": {
+        "location_id": "qingrenpo_lawn"
+      },
+      "counts": {
+        "matched": 41,
+        "pending": 7,
+        "excluded": 50
+      },
+      "A": {
+        "recommendations": [
+          {
+            "photo_id": "REF_097",
+            "resource_id": "REF_097",
+            "image_path": "images/REF_097.webp",
+            "cosine_similarity": 0.18520665168762207,
+            "aesthetic_score": 5.927633285522461,
+            "score": 1.0,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "草地_俯拍近景",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_084",
+            "resource_id": "REF_084",
+            "image_path": "images/REF_084.webp",
+            "cosine_similarity": 0.1813642978668213,
+            "aesthetic_score": 6.340353965759277,
+            "score": 0.9754039991108063,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "草地_平视近景",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_100",
+            "resource_id": "REF_100",
+            "image_path": "images/REF_100.webp",
+            "cosine_similarity": 0.17096827924251556,
+            "aesthetic_score": 6.009197235107422,
+            "score": 0.908856123706087,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "草地_高处俯拍",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          }
+        ],
+        "ndcg_at_3": 1.0
+      },
+      "B": {
+        "recommendations": [
+          {
+            "photo_id": "REF_097",
+            "resource_id": "REF_097",
+            "image_path": "images/REF_097.webp",
+            "cosine_similarity": 0.18520665168762207,
+            "aesthetic_score": 5.927633285522461,
+            "score": 0.9547514809502496,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "草地_俯拍近景",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_084",
+            "resource_id": "REF_084",
+            "image_path": "images/REF_084.webp",
+            "cosine_similarity": 0.1813642978668213,
+            "aesthetic_score": 6.340353965759277,
+            "score": 0.9372008654859398,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "草地_平视近景",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_100",
+            "resource_id": "REF_100",
+            "image_path": "images/REF_100.webp",
+            "cosine_similarity": 0.17096827924251556,
+            "aesthetic_score": 6.009197235107422,
+            "score": 0.8736282583922275,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "草地_高处俯拍",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          }
+        ],
+        "ndcg_at_3": 1.0
+      }
+    },
+    {
+      "id": "T2",
+      "query": "坐在草坡上，身体后仰，一只手撑地，保留树影或大片草坪",
+      "conditions": {
+        "location_id": "qingrenpo_lawn"
+      },
+      "counts": {
+        "matched": 41,
+        "pending": 7,
+        "excluded": 50
+      },
+      "A": {
+        "recommendations": [
+          {
+            "photo_id": "REF_058",
+            "resource_id": "REF_058",
+            "image_path": "images/REF_058.webp",
+            "cosine_similarity": 0.1460411101579666,
+            "aesthetic_score": 4.616520404815674,
+            "score": 1.0,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "树下_低处侧拍",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_057",
+            "resource_id": "REF_057",
+            "image_path": "images/REF_057.webp",
+            "cosine_similarity": 0.13100174069404602,
+            "aesthetic_score": 4.732413291931152,
+            "score": 0.8255995993858078,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "红椅_朝松树",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          },
+          {
+            "photo_id": "REF_053",
+            "resource_id": "REF_053",
+            "image_path": "images/REF_053.webp",
+            "cosine_similarity": 0.1301247775554657,
+            "aesthetic_score": 4.442803382873535,
+            "score": 0.815430109031894,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "红椅_朝钟楼",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          }
+        ],
+        "ndcg_at_3": 0.46927872602275644
+      },
+      "B": {
+        "recommendations": [
+          {
+            "photo_id": "REF_058",
+            "resource_id": "REF_058",
+            "image_path": "images/REF_058.webp",
+            "cosine_similarity": 0.1460411101579666,
+            "aesthetic_score": 4.616520404815674,
+            "score": 0.9401835600535076,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "树下_低处侧拍",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_057",
+            "resource_id": "REF_057",
+            "image_path": "images/REF_057.webp",
+            "cosine_similarity": 0.13100174069404602,
+            "aesthetic_score": 4.732413291931152,
+            "score": 0.7845108982464621,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "红椅_朝松树",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          },
+          {
+            "photo_id": "REF_055",
+            "resource_id": "REF_055",
+            "image_path": "images/REF_055.webp",
+            "cosine_similarity": 0.1298864632844925,
+            "aesthetic_score": 4.76815938949585,
+            "score": 0.7732683375075169,
+            "location_id": "qingrenpo_lawn",
+            "viewpoint_group": "草坡_朝圆塔",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          }
+        ],
+        "ndcg_at_3": 0.7039180890341347
+      }
+    },
+    {
+      "id": "T3",
+      "query": "窗边的近景人像，手里抱玩偶，背景可见窗框和绿树",
+      "conditions": {
+        "location_id": "science_arts_building"
+      },
+      "counts": {
+        "matched": 21,
+        "pending": 7,
+        "excluded": 70
+      },
+      "A": {
+        "recommendations": [
+          {
+            "photo_id": "REF_018",
+            "resource_id": "REF_018",
+            "image_path": "images/REF_018.webp",
+            "cosine_similarity": 0.1247330978512764,
+            "aesthetic_score": 5.82689905166626,
+            "score": 1.0,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "窗边_半身近景",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_025",
+            "resource_id": "REF_025",
+            "image_path": "images/REF_025.webp",
+            "cosine_similarity": 0.11884434521198273,
+            "aesthetic_score": 6.068473815917969,
+            "score": 0.9082990159235721,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "拱廊中轴_台阶下仰拍",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          },
+          {
+            "photo_id": "REF_022",
+            "resource_id": "REF_022",
+            "image_path": "images/REF_022.webp",
+            "cosine_similarity": 0.1137738823890686,
+            "aesthetic_score": 5.080438137054443,
+            "score": 0.8293406254010015,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "室内门框_逆光剪影",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          }
+        ],
+        "ndcg_at_3": 0.5316519652587917
+      },
+      "B": {
+        "recommendations": [
+          {
+            "photo_id": "REF_018",
+            "resource_id": "REF_018",
+            "image_path": "images/REF_018.webp",
+            "cosine_similarity": 0.1247330978512764,
+            "aesthetic_score": 5.82689905166626,
+            "score": 0.9536322116851806,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "窗边_半身近景",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_025",
+            "resource_id": "REF_025",
+            "image_path": "images/REF_025.webp",
+            "cosine_similarity": 0.11884434521198273,
+            "aesthetic_score": 6.068473815917969,
+            "score": 0.8737854900636368,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "拱廊中轴_台阶下仰拍",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          },
+          {
+            "photo_id": "REF_022",
+            "resource_id": "REF_022",
+            "image_path": "images/REF_022.webp",
+            "cosine_similarity": 0.1137738823890686,
+            "aesthetic_score": 5.080438137054443,
+            "score": 0.7917447643837285,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "室内门框_逆光剪影",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          }
+        ],
+        "ndcg_at_3": 0.5316519652587917
+      }
+    },
+    {
+      "id": "T4",
+      "query": "科艺大楼外的毕业人像，想拍出学位服摆动和红砖建筑的光影",
+      "conditions": {
+        "location_id": "science_arts_building"
+      },
+      "counts": {
+        "matched": 21,
+        "pending": 7,
+        "excluded": 70
+      },
+      "A": {
+        "recommendations": [
+          {
+            "photo_id": "REF_078",
+            "resource_id": "REF_078",
+            "image_path": "images/REF_078.webp",
+            "cosine_similarity": 0.16850298643112183,
+            "aesthetic_score": 5.02463436126709,
+            "score": 1.0,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "建筑外侧_波浪形砖檐",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          },
+          {
+            "photo_id": "REF_061",
+            "resource_id": "REF_061",
+            "image_path": "images/REF_061.webp",
+            "cosine_similarity": 0.16829913854599,
+            "aesthetic_score": 4.951552391052246,
+            "score": 0.9978575829855756,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "建筑外侧_竖向砖柱",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          },
+          {
+            "photo_id": "REF_003",
+            "resource_id": "REF_003",
+            "image_path": "images/REF_003.webp",
+            "cosine_similarity": 0.16168154776096344,
+            "aesthetic_score": 5.383781433105469,
+            "score": 0.9283074913416518,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "机位待细分",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          }
+        ],
+        "ndcg_at_3": 0.6993694869720469
+      },
+      "B": {
+        "recommendations": [
+          {
+            "photo_id": "REF_078",
+            "resource_id": "REF_078",
+            "image_path": "images/REF_078.webp",
+            "cosine_similarity": 0.16850298643112183,
+            "aesthetic_score": 5.02463436126709,
+            "score": 0.9447181595696343,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "建筑外侧_波浪形砖檐",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          },
+          {
+            "photo_id": "REF_061",
+            "resource_id": "REF_061",
+            "image_path": "images/REF_061.webp",
+            "cosine_similarity": 0.16829913854599,
+            "aesthetic_score": 4.951552391052246,
+            "score": 0.9419779623653763,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "建筑外侧_竖向砖柱",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          },
+          {
+            "photo_id": "REF_003",
+            "resource_id": "REF_003",
+            "image_path": "images/REF_003.webp",
+            "cosine_similarity": 0.16168154776096344,
+            "aesthetic_score": 5.383781433105469,
+            "score": 0.8841854247975475,
+            "location_id": "science_arts_building",
+            "viewpoint_group": "机位待细分",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          }
+        ],
+        "ndcg_at_3": 0.6993694869720469
+      }
+    },
+    {
+      "id": "T5",
+      "query": "双人在桥上互动，牵手或转圈，构图里保留栏杆",
+      "conditions": {
+        "location_id": "ucas_bridge"
+      },
+      "counts": {
+        "matched": 12,
+        "pending": 7,
+        "excluded": 79
+      },
+      "A": {
+        "recommendations": [
+          {
+            "photo_id": "REF_041",
+            "resource_id": "REF_041",
+            "image_path": "images/REF_041.webp",
+            "cosine_similarity": 0.128829687833786,
+            "aesthetic_score": 4.207155227661133,
+            "score": 1.0,
+            "location_id": "ucas_bridge",
+            "viewpoint_group": "桥外侧_钢拱与栏杆",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          },
+          {
+            "photo_id": "REF_021",
+            "resource_id": "REF_021",
+            "image_path": "images/REF_021.webp",
+            "cosine_similarity": 0.11962654441595078,
+            "aesthetic_score": 4.64119815826416,
+            "score": 0.8087476959069398,
+            "location_id": "ucas_bridge",
+            "viewpoint_group": "桥上栏杆_朝山与道路",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          },
+          {
+            "photo_id": "REF_104",
+            "resource_id": "REF_104",
+            "image_path": "images/REF_104.jpg",
+            "cosine_similarity": 0.11064722388982773,
+            "aesthetic_score": 4.703322410583496,
+            "score": 0.6221466986343047,
+            "location_id": "ucas_bridge",
+            "viewpoint_group": "桥上栏杆_朝钟楼",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          }
+        ],
+        "ndcg_at_3": 0.23463936301137822
+      },
+      "B": {
+        "recommendations": [
+          {
+            "photo_id": "REF_041",
+            "resource_id": "REF_041",
+            "image_path": "images/REF_041.webp",
+            "cosine_similarity": 0.128829687833786,
+            "aesthetic_score": 4.207155227661133,
+            "score": 0.9356350580851237,
+            "location_id": "ucas_bridge",
+            "viewpoint_group": "桥外侧_钢拱与栏杆",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          },
+          {
+            "photo_id": "REF_021",
+            "resource_id": "REF_021",
+            "image_path": "images/REF_021.webp",
+            "cosine_similarity": 0.11962654441595078,
+            "aesthetic_score": 4.64119815826416,
+            "score": 0.7683306836302921,
+            "location_id": "ucas_bridge",
+            "viewpoint_group": "桥上栏杆_朝山与道路",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          },
+          {
+            "photo_id": "REF_104",
+            "resource_id": "REF_104",
+            "image_path": "images/REF_104.jpg",
+            "cosine_similarity": 0.11064722388982773,
+            "aesthetic_score": 4.703322410583496,
+            "score": 0.6010800555551353,
+            "location_id": "ucas_bridge",
+            "viewpoint_group": "桥上栏杆_朝钟楼",
+            "viewpoint_status": "unknown",
+            "relevance": 0
+          }
+        ],
+        "ndcg_at_3": 0.23463936301137822
+      }
+    },
+    {
+      "id": "T6",
+      "query": "圆塔附近从低处拍人，利用栏杆和台阶作为前景",
+      "conditions": {
+        "location_id": "round_tower"
+      },
+      "counts": {
+        "matched": 7,
+        "pending": 7,
+        "excluded": 84
+      },
+      "A": {
+        "recommendations": [
+          {
+            "photo_id": "REF_066",
+            "resource_id": "REF_066",
+            "image_path": "images/REF_066.webp",
+            "cosine_similarity": 0.13769319653511047,
+            "aesthetic_score": 4.547862529754639,
+            "score": 1.0,
+            "location_id": "round_tower",
+            "viewpoint_group": "圆塔下方_仰拍",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_036",
+            "resource_id": "REF_036",
+            "image_path": "images/REF_036.webp",
+            "cosine_similarity": 0.10749594867229462,
+            "aesthetic_score": 5.176128387451172,
+            "score": 0.667683484278984,
+            "location_id": "round_tower",
+            "viewpoint_group": "机位待细分",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_068",
+            "resource_id": "REF_068",
+            "image_path": "images/REF_068.webp",
+            "cosine_similarity": 0.09761514514684677,
+            "aesthetic_score": 4.2755446434021,
+            "score": 0.5589466147795604,
+            "location_id": "round_tower",
+            "viewpoint_group": "机位待细分",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          }
+        ],
+        "ndcg_at_3": 1.0
+      },
+      "B": {
+        "recommendations": [
+          {
+            "photo_id": "REF_066",
+            "resource_id": "REF_066",
+            "image_path": "images/REF_066.webp",
+            "cosine_similarity": 0.13769319653511047,
+            "aesthetic_score": 4.547862529754639,
+            "score": 0.9394206947750515,
+            "location_id": "round_tower",
+            "viewpoint_group": "圆塔下方_仰拍",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_036",
+            "resource_id": "REF_036",
+            "image_path": "images/REF_036.webp",
+            "cosine_similarity": 0.10749594867229462,
+            "aesthetic_score": 5.176128387451172,
+            "score": 0.6473165623783209,
+            "location_id": "round_tower",
+            "viewpoint_group": "机位待细分",
+            "viewpoint_status": "unknown",
+            "relevance": 2
+          },
+          {
+            "photo_id": "REF_068",
+            "resource_id": "REF_068",
+            "image_path": "images/REF_068.webp",
+            "cosine_similarity": 0.09761514514684677,
+            "aesthetic_score": 4.2755446434021,
+            "score": 0.5394468937838499,
+            "location_id": "round_tower",
+            "viewpoint_group": "机位待细分",
+            "viewpoint_status": "unknown",
+            "relevance": 1
+          }
+        ],
+        "ndcg_at_3": 1.0
+      }
+    }
+  ]
+}
