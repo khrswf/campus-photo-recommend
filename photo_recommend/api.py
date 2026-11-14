@@ -1,17 +1,20 @@
 """Local HTTP interface for the camera app."""
 
 import logging
+import os
+from pathlib import Path
 from typing import Annotated
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints
 
-from .recommend import recommend
+from .recommend import FORMAL_CATALOG, recommend
 
 
 logger = logging.getLogger(__name__)
 app = FastAPI(title="校园摄影推荐")
 Label = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=100)]
+CATALOG_PATH = Path(os.environ.get("PHOTO_RECOMMEND_CATALOG", FORMAL_CATALOG)).resolve()
 
 
 class RecommendRequest(BaseModel):
@@ -35,8 +38,10 @@ def health():
 
 @app.post("/recommend")
 def recommend_photos(request: RecommendRequest):
+    if not CATALOG_PATH.is_file():
+        raise HTTPException(status_code=503, detail="catalog_unavailable")
     try:
-        return recommend(**request.model_dump())
+        return recommend(catalog_path=CATALOG_PATH, **request.model_dump())
     except (OSError, RuntimeError) as exc:
         logger.exception("Recommendation unavailable")
         raise HTTPException(status_code=503, detail="recommendation_unavailable") from exc

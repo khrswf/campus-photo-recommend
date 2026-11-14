@@ -1,0 +1,48 @@
+{
+  "dataset_id": "sample",
+  "version": "1",
+  "photos": [
+    {
+      "photo_id": "scene_02",
+      "image_path": "images/scene_02.jpg",
+      "resource_id": "demo_scene_02",
+      "location_id": "tsinghua_old_library",
+      "person_count": 0,
+      "framing": "scene",
+      "pose": null,
+      "background_objects": [
+        "stairs"
+      ],
+      "viewpoint_status": "unknown",
+      "source": {
+        "title": "2018年清華老館秋景.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:2018%E5%B9%B4%E6%B8%85%E8%8F%AF%E8%80%81%E9%A4%A8%E7%A7%8B%E6%99%AF.jpg",
+        "author": "清華匿名學生",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "downloaded_version": "original"
+      }
+    },
+    {
+      "photo_id": "scene_05",
+      "image_path": "images/scene_05.jpg",
+      "resource_id": "demo_scene_05",
+      "location_id": "tsinghua_second_gate",
+      "person_count": 0,
+      "framing": "scene",
+      "pose": null,
+      "background_objects": [
+        "campus_gate"
+      ],
+      "viewpoint_status": "unknown",
+      "source": {
+        "title": "2019年二校門.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:2019%E5%B9%B4%E4%BA%8C%E6%A0%A1%E9%96%80.jpg",
+        "author": "清華匿名學生",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "downloaded_version": "original"
+      }
+    }
+  ]
+}

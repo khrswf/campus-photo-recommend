@@ -1,6 +1,6 @@
 # 校园摄影推荐 · 成员 2 本地演示
 
-此仓库包含推荐源码、依赖清单、演示请求与实测响应。组员可以先查看三条演示的 JSON 结果。完整运行需要课程组内的本地演示包，请将包中的 `data/formal/`、`cache/models/` 和 `cache/features/` 按原目录复制到仓库根目录。
+克隆后可使用 [公开样例图库](data/sample/catalog.json) 试跑，包含两张 CC0 照片及其来源和标签。需要复现 98 张国科大照片上的三条演示时，请向成员 2 获取组内文件 `校园摄影推荐_组内图库.zip`，解压到仓库根目录。解压后应能找到 `data/formal/catalog.json` 和 `data/formal/images/`。模型权重由下方脚本下载。
 
 ## 准备 Windows 环境
 
@@ -22,15 +22,34 @@ py -3.10 -m venv .venv
 
 如果机器已用 `python` 命令指向 Python 3.10，也可以用 `python -m venv .venv`。依赖版本以 `requirements.txt` 为准。已有项目虚拟环境时可直接启动服务。
 
+## 下载模型并生成特征
+
+首次需要联网下载约 2 GiB 的模型。命令将权重存入仓库下的 `cache/models/`。
+
+```powershell
+& .\.venv\Scripts\python.exe -X utf8 .\demo\download_models.py
+```
+
+然后选择图库。用公开样例时执行以下命令。
+
+```powershell
+$env:PHOTO_RECOMMEND_CATALOG = 'data/sample/catalog.json'
+& .\.venv\Scripts\python.exe -X utf8 -m photo_recommend.preprocess --catalog $env:PHOTO_RECOMMEND_CATALOG
+```
+
+用组内正式图库时，把变量改成 `data/formal/catalog.json` 后，运行同一条预处理命令。若已经从完整本地演示包取得模型和特征缓存，可把其中的 `cache/models/` 和 `cache/features/` 复制到仓库根目录。
+
 ## 启动本机接口
 
-在项目根目录运行。接口使用正式图库和已生成的特征缓存。
+在设置了 `PHOTO_RECOMMEND_CATALOG` 的同一个 PowerShell 窗口中运行。未设置变量时，默认使用 `data/formal/catalog.json`。
 
 ```powershell
 & .\.venv\Scripts\python.exe -m uvicorn photo_recommend.api:app --host 127.0.0.1 --port 8000
 ```
 
-保持服务窗口运行，在另一个 PowerShell 窗口进入项目根目录，执行下面的命令。脚本会逐条检查实际 HTTP 响应、照片资源和筛选数量。
+使用公开样例时，在 `http://127.0.0.1:8000/docs` 的 `POST /recommend` 发送 `{"location_id":"tsinghua_old_library","query":"图书馆入口上方的秋叶和台阶","limit":3}`，预期返回一条 `scene_02`。
+
+使用正式图库时，保持服务窗口运行，在另一个 PowerShell 窗口进入项目根目录，执行以下命令。脚本会检查三条实测响应、照片资源和筛选数量。
 
 ```powershell
 & .\.venv\Scripts\python.exe -X utf8 .\demo\run_demo.py
@@ -66,7 +85,7 @@ py -3.10 -m venv .venv
 
 | 请求字段 | 含义 |
 | --- | --- |
-| `location_id` | 地点编码，例如 `qingrenpo_lawn`。完整对照见演示包内的 `data/formal/catalog.json`。 |
+| `location_id` | 地点编码，例如 `qingrenpo_lawn`。地点对照见所选图库的 `catalog.json`。 |
 | `query` | 用于图文排序的中文描述。省略时按美学分排序。 |
 | `person_count`、`framing`、`pose` | 可选硬条件，例如 `1`、`"full_body"`、`"sitting"`。 |
 | `required_objects`、`forbidden_poses` | 可选字符串数组，例如 `["red_bench"]`。 |
@@ -88,6 +107,6 @@ py -3.10 -m venv .venv
 }
 ```
 
-当前联调约定暂用原有 `REF_XXX` 编号作为 `resource_id`。`image_path` 相对于 `data/formal/`。App 需要持有对应的图库资源，再通过索引或相对路径加载。
+正式图库暂用原有 `REF_XXX` 编号作为 `resource_id`。`image_path` 相对于当前 `catalog.json` 所在目录。App 根据该路径或资源索引加载对应图片。
 
 想验证无匹配，可用 `{"location_id":"cafeterias_3_4","person_count":1,"framing":"full_body","pose":"sitting","required_objects":["red_bench"]}`。响应仍是 HTTP 200，`recommendations` 为空，`reason` 为 `no_confirmed_matches`，`filter_counts` 给出匹配、待确认和排除数量。`pending` 列出待确认照片及缺失字段。`features_unavailable` 表示有匹配照片，但可用特征缓存不足。字段校验失败返回 HTTP 422，模型或数据读取异常返回 HTTP 503。
